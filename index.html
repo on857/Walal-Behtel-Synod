@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Walal Bethel Synod - WBS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #2e7d32;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact {
+      background: #e8f5e9;
+      padding: 1rem;
+      border-left: 5px solid #2e7d32;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #2e7d32;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Walal Bethel Synod - WBS</h1>
+    <p>Proclaiming the Gospel and Serving Communities in Western Ethiopia</p>
+  </header>
+
+  <main>
+    <section class="fade-in">
+      <h2>About Us</h2>
+      <p>
+        The Walal Bethel Synod, located in the Kelam Wollega Zone of the Oromia National Regional State, represents a significant development in the evangelical landscape of Western Ethiopia. Its central office is situated in Kake Town within the Dale Wabera District, approximately 597 kilometers from Addis Ababa.
+      </p>
+      <p>
+        The Synod’s roots go back to 1919, when Presbyterian missionaries like Dr. Thomas Alexander Lambie arrived in response to the Spanish flu epidemic. From medical work to widespread evangelism, their work led to the formation of the Evangelical Bethel Church in 1947.
+      </p>
+      <p>
+        Over the decades, evangelism expanded under leaders like Buchanan, with efforts reaching Addis Ababa and Illu Abba Bora. These movements led to the formation of the Western Wollega Bethel Synod, and later the Walal Bethel Synod, established on December 31, 2022.
+      </p>
+      <p>
+        Today, the Synod includes 12 presbyteries, 4 work areas, 270 congregations, 30 preaching places, and 238 pastors and evangelists, serving over 145,000 communicant members. Its mission is rooted in growth, spiritual development, and serving the Oromo community.
+      </p>
+    </section>
+
+    <section class="fade-in">
+      <h2>Contact Us</h2>
+      <div class="contact">
+        <p><strong>Phone:</strong> +251913411016</p>
+        <p><strong>Email:</strong> mesfinyigezu88@gmail.com</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Walal Bethel Synod. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Fade-in animation on scroll
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+      threshold: 0.2,
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+</body>
+</html>
