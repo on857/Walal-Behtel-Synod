@@ -17,7 +17,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
- <style>
+<style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background-color: #fff;
@@ -70,23 +74,36 @@
       transform: translateY(-3px);
     }
 
-    .card h2 {
-      font-size: 1.25rem;
+    .card a {
+      text-decoration: none;
       color: #1d4ed8;
-      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      display: inline-block;
       transition: color 0.3s;
     }
 
-    .card h2:hover {
+    .card a:hover {
       color: #2563eb;
     }
 
-    .card p, .card ul {
-      font-size: 0.95rem;
-      line-height: 1.5;
+    .detail-section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      border-top: 2px solid #ccc;
     }
 
-    .card ul {
+    .detail-section h2 {
+      color: #1d4ed8;
+    }
+
+    .detail-section p, .detail-section ul {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .detail-section ul {
       padding-left: 20px;
     }
 
@@ -98,78 +115,177 @@
       background-color: #f1f5f9;
       margin-top: 30px;
     }
+    h3 {
+      color: #1d4ed8;
+      margin-top: 20px;
+    }
+    p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
   </style>
 </head>
 <body>
-  <header>
+ <header>
     <h1>Walal Bethel Synod (WBS)</h1>
     <p>A vibrant and spiritually committed Synod serving the Kellem Wollega Zone of Western Ethiopia.</p>
   </header>
 
   <div class="container">
-    <div class="card">
-      <h2>Establishment & Background</h2>
-      <p>Established in 2022 from the Western Wollega Bethel Synod, WBS now oversees 293 congregations with over 145,000 members. Rooted in a century of mission, the Synod emphasizes local governance and holistic ministry.</p>
-    </div>
+    <div class="card"><a href="#establishment">Establishment And Background</a></div>
+    <div class="card"><a href="#vision">Vision And Mission</a></div>
+    <div class="card"><a href="#values">Core Values</a></div>
+    <div class="card"><a href="#plan">Strategic Plan (2024–2028)</a></div>
+    <div class="card"><a href="#challenges">Challenges</a></div>
+    <div class="card"><a href="#support">Call for Support</a></div>
+    <div class="card"><a href="#development">Development Activities</a></div>
+    <div class="card"><a href="#contact">Contact & Bank Details</a></div>
+  </div>
 
-    <div class="card">
-      <h2>Vision & Mission</h2>
-      <p><strong>Vision:</strong> Christ-centered, spiritually vibrant, resource-sustainable.<br>
-      <strong>Mission:</strong> Spread the Gospel and uplift communities via education, healthcare, and social services.</p>
-    </div>
+  <div id="establishment" class="detail-section">
+    <h2>Establishment & Background</h2>
+    <h3>Introduction</h3>
+    <p> The Walal Bethel Synod is a significant and growing unit of the Ethiopian Evangelical Church Mekane Yesus (EECMY).</p>
+       <p>Formally established in 2022, it serves as a spiritual and administrative center for numerous congregations across the Kellem Wollega Zone in Western Ethiopia.</p> 
+       <p>This document provides a detailed overview of the Synods historical background, vision, mission, organizational structure, challenges, and future strategies, calling for support to further its mission.</p>
+      
+    <h3>Historical Background</h3>
+    <p>
+      The origins of the EECMY Walal Bethel Synod are deeply rooted in the early 20th-century missionary efforts of the American Presbyterian Church, particularly the work of Dr. Alexander Lambie, who arrived in Western Ethiopia in 1919. Lambie's medical and evangelistic outreach among the unreached communities of Western Wollega laid the groundwork for a burgeoning evangelical movement. By 1942, these efforts culminated in the establishment of the Western Wollega Bethel Synod (WWBS), marking a major milestone in the history of Ethiopian Protestant Christianity.
+      As the Christian population grew, the WWBS faced increasing administrative and geographical challenges, eventually leading to the decision to divide the Synod into smaller, more manageable units. After a decade of careful planning and consultations, the Walal Bethel Synod was officially formed in December 2022, becoming fully operational in January 2023. It now serves 293 congregations with over 145,000 members, 238 pastors and evangelists, and is supported by 12 presbyteries and 4 work areas. The Synod oversees the spiritual and administrative needs of these congregations, providing leadership, pastoral care, and community development. The division of the Western Wollega Bethel Synod into the Walal Bethel Synod was intended to enhance local governance and ministry, allowing for a more effective response to the needs of the rapidly growing congregations.
+      The establishment of the Walal Bethel Synod has not only strengthened the administrative capacity of the church but has also revitalized evangelistic efforts in the region. The Synod operates in the Kellem Wollega Zone, particularly in the woredas (districts) of Dalle Wabera, Gawo Kebe, Jimma Horro, Dale Sadi, Lalo Kile, Yubdo and Sadi Chanka fully and Ayira Guliso and Ganji Districts partially. Its work is shaped by a holistic approach to ministry that integrates spiritual growth with social and economic development, a model deeply embedded in the tradition of the EECMY.</p>
+    </p>
+  </div>
 
-    <div class="card">
-      <h2>Core Values</h2>
-      <ul>
-        <li>Faithfulness</li>
-        <li>Community Service</li>
-        <li>Integrity</li>
-        <li>Leadership Development</li>
-        <li>Inclusivity</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Strategic Plan (2024–2028)</h2>
-      <ul>
-        <li>Evangelism & Church Growth</li>
-        <li>Leadership Development</li>
-        <li>Community Development</li>
-        <li>Financial Sustainability</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Challenges</h2>
-      <p>Regional insecurity, economic hardship, and lack of infrastructure hinder operations. Support is needed to overcome these barriers.</p>
-    </div>
-
-    <div class="card">
-      <h2>Call for Support</h2>
-      <p>Join our mission by contributing financially, providing training, or partnering with us for holistic transformation.</p>
-    </div>
-
-    <div class="card">
-      <h2>Development Activities (DASSC-WBS)</h2>
-      <ul>
-        <li>Healthcare (HIV/AIDS, Malaria)</li>
-        <li>Clean Water Projects</li>
-        <li>Food Security and Livelihood Programs</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Contact & Bank Details</h2>
-      <p>
-        Address: Kake, Kellem Wollega Zone, Ethiopia<br>
-        P.O. Box: 16<br>
-        Phone: 0913411016<br>
-        Email: mesfinyigezu88@gmail.com<br><br>
-        Bank: Commercial Bank of Ethiopia, Kake Branch<br>
-        Account Name: EECMY Walal Bethel Synod<br>
-        Account Numbers: 1000347667041, 1000526165307
+  <div id="vision" class="detail-section">
+    <h2>Vision & Mission</h2>
+    <h3>Vision</h3>
+    <p> To become a Christ-centered, spiritually vibrant, and resource-sustainable Synod, deeply committed to the Great Commission and the holistic transformation of society through evangelism, education, and community service.
       </p>
-    </div>
+    <h3>Mission</h3>
+    <p><Strong>Spiritual Mission:</Strong> To preach the Gospel of Jesus Christ, make disciples of all nations, and foster spiritual growth within local communities.</p>
+    <p><Strong>Social Mission:</Strong> To demonstrate Gods love through acts of service, community development, healthcare, education, and social welfare, uplifting the holistic well-being of the people it serves.</p>
+  </div>
+
+  <div id="values" class="detail-section">
+    <h2>Core Values</h2>
+    <ul>
+      <li><Strong>Faithfulness: </Strong>The Synod is grounded in the teachings of Christ and guided by Biblical principles in all aspects of its ministry.</li>
+      <li><Strong>Community Service: </Strong>The Synod recognizes the importance of meeting both spiritual and physical needs through development initiatives and social outreach.</li>
+      <li><Strong>Integrity: </Strong>Transparency, accountability, and ethical leadership are essential values in the Synods operations.</li>
+      <li><Strong>Leadership Development: </Strong>Investing in the development of pastors, evangelists, and lay leaders ensures the sustainability of the Synods ministry.</li>
+      <li><Strong>Inclusivity: </Strong>The Synod promotes the active participation of all members, particularly women and youth, in leadership and ministry.</li>
+    </ul>
+  </div>
+
+  <div id="relationship" class="detail-section">
+    <h2>Relationship with EECMY</h2>
+    <p>
+      As part of the broader structure of the Ethiopian Evangelical Church Mekane Yesus (EECMY), the Walal Bethel Synod is closely linked to other synods across Ethiopia. 
+      This connection strengthens its mission by providing access to shared resources, leadership training, and collaborative evangelistic efforts. 
+      The Synod benefits from the collective mission strategy of the EECMY while maintaining its unique identity, deeply rooted in its historical and cultural context.
+    </p>
+    <h3>Five-Year Activity Plan (2024-2028)</h3>
+    <p>
+      The Walal Bethel Synod has developed a comprehensive five-year activity plan that focuses on both short-term and long-term goals. 
+      The plan emphasizes evangelism, education, community development, and infrastructure expansion.
+    </p>
+    <h3>Short-Term Goals (2024-2026):</h3>
+    <p>
+      <Strong>Leadership Training: </Strong>Strengthen the capacity of 238 pastors, evangelists, and congregational leaders through comprehensive theological and leadership training. <br>
+      <Strong>Bible School Upgrading: </Strong> Upgrade Bethel Bible School to offer diploma programs in vernacular languages, making theological education more accessible to local communities.<br>
+      <Strong>Church Expansion: </Strong>Plant new churches and provide support for evangelists to reach unreached areas, particularly in remote woredas of Western Oromia.<br>
+    </p>
+    <h3>Long-Term Goals (2026-2028):</h3>
+    <p>
+      <Strong>Community Development: </Strong>Expand initiatives that provide clean water, healthcare, and livelihood support, focusing on the prevention and care of HIV/AIDS and other public health challenges.<br>
+      <Strong>Educational Support: </Strong>Upgrade Kake KG Elementary School to provide high school education, ensuring that the community has access to a complete range of educational services.<br>
+    <Strong>Infrastructure Development: </Strong>Build new classrooms, dormitories, libraries, and staff offices to support the educational and evangelistic missions of the Synod.
+    </p>
+  </div>
+
+  <div id="plan" class="detail-section">
+    <h2>Strategic Plan (2024–2028)</h2>
+    <h3>The Synods strategic plan is built on four key pillars</h3>
+    <ul>
+      <li><Strong>Evangelism & Church Growth: </Strong>Expanding the reach of the Gospel through planting new congregations, training evangelists, and supporting cross-cultural and urban evangelism.</li>
+      <li><Strong>Leadership And Capacity Development: </Strong> Enhancing the skills of pastors and church leaders through continuous education and leadership training programs.</li>
+      <li><Strong>Community Development: </Strong>Integrating social services with spiritual growth by improving access to education, healthcare, and sustainable livelihoods.</li>
+      <li><Strong>Financial Sustainability: </Strong>Developing income-generating activities and implementing responsible financial stewardship practices to ensure long-term sustainability of both church and community programs.</li>
+    </ul>
+  </div>
+
+  <div id="challenges" class="detail-section">
+    <h2>Challenges</h2>
+    <p>
+      <Strong>Despite its impressive growth, the Walal Bethel Synod faces significant challenges </Strong><br>
+    <Strong>Regional Insecurity: </Strong>Political instability, conflict, and displacement in the region have impacted the Synods ability to operate and strained its resources.<br>
+    <Strong>Economic Hardship: </Strong>High inflation and widespread poverty have made it difficult for pastors, evangelists, and congregational members to sustain their ministries and meet basic needs.<br>
+    <Strong>Infrastructure Deficiencies: </Strong>The Synod lacks essential facilities, such as adequate office buildings, vehicles for mobility, and communication tools, which hampers its ability to function effectively.
+    </p>
+  </div>
+
+  <div id="support" class="detail-section">
+    <h2>Call for Support</h2>
+    <p>
+      In light of these challenges, the Walal Bethel Synod calls upon local and international partners for support.<br> 
+      This includes:
+      <ul>
+      <li><Strong>Financial Contributions: </Strong>To assist with the construction of new infrastructure and support community development projects.</li>
+      <li><Strong>Training and Capacity Building: </Strong>To provide church leaders with the necessary skills and resources to lead their congregations effectively.</li>
+      <li><Strong>Partnerships: </Strong>To establish long-term relationships with organizations and donors who share the Synods vision of spiritual and social transformation.</li>
+      <!-- <li>Prayer Support: To pray for the Synods mission, its leaders, and the communities it serves.</li>
+      <li>Volunteer Opportunities: To engage individuals and groups in hands-on service projects that support the Synods mission.</li>
+      <li>Advocacy: To raise awareness about the challenges faced by the Synod and its communities, encouraging others to join in support.</li>
+      <li>Resource Sharing: To provide educational materials, medical supplies, and other resources that can enhance the Synods programs.</li>
+      <li>Networking: To connect the Synod with other organizations and churches that can provide additional support and resources.</li>
+      <li>Mentorship: To offer guidance and support to church leaders and congregations in their growth and development.</li> -->
+    </ul>
+    </p>
+  </div>
+
+  <div id="development" class="detail-section">
+    <h2>Development Activities Under EECMY DASSC-WBS Branch Office</h2>
+    <p>
+      The Walal Bethel Synod works closely with the EECMYs Development and Social Services Commission (DASSC) to implement various development programs aimed at improving the well-being of its communities. 
+      Key initiatives include:
+    </p>
+    <ul>
+      <li><Strong>Healthcare: </Strong>Addressing public health issues such as malaria, HIV/AIDS, and maternal and child health through clinics and health education programs.</li>
+      <li><Strong>Clean Water Projects: </Strong> Providing access to clean and safe drinking water in rural and underserved areas.</li>
+      <li><Strong>Food Security and Livelihood Programs: </Strong>Supporting agricultural projects that enhance food security and improve livelihoods for vulnerable populations.</li>
+    </ul>
+  </div>
+
+  <div id="conclusion" class="detail-section">
+    <h2>Conclusion</h2>
+    <p>
+      The Walal Bethel Synod stands at a pivotal moment in its history. With a clear vision, a strong mission, and a robust five-year plan, the Synod is poised for both spiritual and social growth. However, it faces considerable challenges, including financial constraints and regional insecurity. 
+      By partnering with local and international supporters, the Synod aims to overcome these obstacles and continue its impactful ministry in Western Ethiopia.<br><br>
+      Together, with Gods guidance and the support of committed partners, the Walal Bethel Synod can achieve its vision of a vibrant, sustainable, and transformative church that serves both the spiritual and physical needs of its people.
+    </p>
+  </div>
+
+  <div id="contact" class="detail-section">
+    <h2>Contact & Bank Details</h2>
+    <h3>Main Office Contact Information</h3>
+    <p>
+      For inquiries, partnerships, and further information, the main office can be contacted at:<br>
+      <Strong>Address: </Strong>Kake, Kellem Wollega Zone, Ethiopia<br>
+      <Strong>P.O. Box: </Strong>16<br>
+      Phone: 0913411016<br>
+      <Strong>Email: </Strong><a href="mailto:mesfinyigezu88@gmail.com">mesfinyigezu88@gmail.com</a><br><br>
+        This contact information is essential for establishing connections with individuals and organizations interested in supporting the mission and activities of the Walal Bethel Synod.
+        Bank Account and Authorized Signatories To facilitate financial transactions and partnerships, the Synod maintains a banking relationship with:<br>
+
+      Bank Name: Commercial Bank of Ethiopia, Kake Branch<br>
+      Account Name: EECMY Walal Bethel Synod<br>
+      Account Numbers: 1000347667041, 1000526165307<br>
+      <Strong>Swift Code: </Strong>CBETETAA<br><br>
+      This banking information is critical for transparency and accountability in financial management,
+       ensuring that donations and funds are handled responsibly.
+    </p>
   </div>
 
   <footer>
