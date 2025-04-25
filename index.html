@@ -33,6 +33,7 @@
     header {
       text-align: center;
       padding: 40px 20px;
+      width: 100%;
       height: 500px;
       background-size: cover;
       background-color: #e8f0fe;
@@ -146,6 +147,30 @@
       font-size: 1rem;
       line-height: 1.4;
     }
+  /* Smartphones */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    flex-direction: column;
+  }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1025px) {
+  body {
+    font-size: 18px;
+  }
+}
+
   </style>
 </head>
 <body>
