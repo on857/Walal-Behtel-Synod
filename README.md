@@ -1,1 +1,1 @@
-it is church website to give full information about the church. one page website
+the fist project I Have made. it is church website made only by pure html, css and javascript.
