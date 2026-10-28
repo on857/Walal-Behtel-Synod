@@ -709,6 +709,27 @@ a:hover {
   border-color: var(--slate-300);
 }
 
+/* Attractive Destination Arrival Highlight */
+.detail-section.target-arrival-highlight,
+.support-action-box.target-arrival-highlight {
+  animation: targetArrivalGlow 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes targetArrivalGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
+    border-color: var(--accent-gold-400);
+  }
+  30% {
+    box-shadow: 0 0 32px rgba(245, 158, 11, 0.35), 0 10px 30px rgba(37, 99, 235, 0.15);
+    border-color: var(--accent-gold-500);
+  }
+  100% {
+    box-shadow: var(--shadow-sm);
+    border-color: var(--slate-200);
+  }
+}
+
 .detail-section::before {
   content: "";
   position: absolute;

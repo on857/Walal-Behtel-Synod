@@ -33,15 +33,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  // Smooth scroll back to top
-  backToTopBtn?.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
+  // ========================================================================
+  // 3. ULTRA-SMOOTH EASING SCROLL ENGINE & ATTRATIVE ARRIVAL HIGHLIGHT
+  // ========================================================================
+  // Disable native CSS smooth scroll so custom physics easing is silky smooth without frame conflict
+  document.documentElement.style.scrollBehavior = 'auto';
 
-  // 3. Mobile Navigation Menu Toggle
+  let isSmoothScrolling = false;
+
+  const smoothScrollTo = (targetY, userDuration, callback) => {
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
+    if (Math.abs(distance) < 4) {
+      if (callback) callback();
+      return;
+    }
+
+    isSmoothScrolling = true;
+
+    // Calculate dynamic duration based on travel distance for a natural, silky feel
+    const duration = userDuration || Math.min(Math.max(Math.abs(distance) * 0.45, 650), 950);
+    const startTime = performance.now();
+
+    // Quintic easeInOut: smooth acceleration, rapid mid-flight glide, and silky deceleration
+    const easeInOutQuint = (t) => {
+      return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t;
+    };
+
+    let animationFrameId;
+
+    const step = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = easeInOutQuint(progress);
+
+      window.scrollTo(0, startY + distance * ease);
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(step);
+      } else {
+        window.scrollTo(0, targetY);
+        isSmoothScrolling = false;
+        if (callback) callback();
+      }
+    };
+
+    // If user interrupts scroll with touch or wheel, cancel smoothly
+    const stopScroll = () => {
+      cancelAnimationFrame(animationFrameId);
+      isSmoothScrolling = false;
+      window.removeEventListener('wheel', stopScroll);
+      window.removeEventListener('touchmove', stopScroll);
+    };
+
+    window.addEventListener('wheel', stopScroll, { passive: true, once: true });
+    window.addEventListener('touchmove', stopScroll, { passive: true, once: true });
+
+    requestAnimationFrame(step);
+  };
+
+  // Mobile Navigation Menu Toggle
   const mobileToggleBtn = document.getElementById('mobileToggleBtn');
   const navMenu = document.getElementById('navMenu');
 
@@ -52,16 +103,59 @@ document.addEventListener('DOMContentLoaded', () => {
       mobileToggleBtn.setAttribute('aria-expanded', isOpen);
       mobileToggleBtn.innerHTML = isOpen ? '<span class="toggle-icon">✕</span> Close' : '<span class="toggle-icon">☰</span> Menu';
     });
-
-    // Close menu when clicking any navigation link
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        mobileToggleBtn.setAttribute('aria-expanded', 'false');
-        mobileToggleBtn.innerHTML = '<span class="toggle-icon">☰</span> Menu';
-      });
-    });
   }
+
+  // Handle all internal anchor clicks with custom silky smooth scrolling & arrival highlight
+  const allAnchorLinks = document.querySelectorAll('a[href^="#"]');
+  allAnchorLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        e.preventDefault();
+
+        // Close mobile drawer cleanly if open
+        if (navMenu && navMenu.classList.contains('open')) {
+          navMenu.classList.remove('open');
+          mobileToggleBtn?.setAttribute('aria-expanded', 'false');
+          if (mobileToggleBtn) {
+            mobileToggleBtn.innerHTML = '<span class="toggle-icon">☰</span> Menu';
+          }
+        }
+
+        // Calculate destination with sticky navbar compensation
+        const navbarHeight = navbar ? navbar.offsetHeight : 65;
+        const extraPadding = window.innerWidth <= 768 ? 12 : 20;
+        let destination = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight - extraPadding;
+        if (targetId === 'top') destination = 0;
+        destination = Math.max(0, destination);
+
+        // Execute smooth scroll
+        smoothScrollTo(destination, null, () => {
+          // Update URL hash without abrupt jumping
+          if (history.pushState) {
+            history.pushState(null, null, href);
+          }
+
+          // Trigger attractive destination arrival glow
+          targetElement.classList.add('target-arrival-highlight');
+          setTimeout(() => {
+            targetElement.classList.remove('target-arrival-highlight');
+          }, 1800);
+        });
+      }
+    });
+  });
+
+  // Smooth scroll back to top button
+  backToTopBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    smoothScrollTo(0, 700);
+  });
 
   // 4. ScrollSpy: Highlight Active Nav Link on Scroll
   const sections = document.querySelectorAll('article[id], header[id]');
