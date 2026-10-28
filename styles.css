@@ -2040,22 +2040,28 @@ a:hover {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (Tablets & Mobile)
+   COMPREHENSIVE RESPONSIVE DESIGN (All Devices: 320px to 4K)
    ========================================================================== */
-@media (max-width: 1024px) {
+
+/* 1. Large Tablets & Small Laptops (1081px - 1200px) */
+@media (max-width: 1200px) {
   .hero-title {
-    font-size: 2.85rem;
+    font-size: 3.1rem;
   }
-  .stats-card-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .nav-container {
+    padding: 0.75rem 1.25rem;
   }
-  .footer-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+  .nav-menu {
+    gap: 0.15rem;
+  }
+  .nav-link {
+    font-size: 0.82rem;
+    padding: 0.45rem 0.55rem;
   }
 }
 
-@media (max-width: 1100px) {
+/* 2. Tablets & Navigation Drawer Breakpoint (<= 1080px) */
+@media (max-width: 1080px) {
   .mobile-toggle-btn {
     display: inline-flex;
   }
@@ -2079,6 +2085,7 @@ a:hover {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     max-height: calc(100vh - 70px);
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-menu.open {
@@ -2090,24 +2097,69 @@ a:hover {
   .nav-link {
     width: 100%;
     text-align: center;
-    padding: 0.75rem;
-    font-size: 1.02rem;
+    padding: 0.85rem;
+    font-size: 1.05rem;
+  }
+
+  .nav-cta-btn {
+    margin-left: 0 !important;
+    margin-top: 0.35rem;
+    text-align: center;
+  }
+
+  .stats-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
   }
 }
 
-@media (max-width: 768px) {
+/* 3. Medium Tablets & Small Viewports (<= 880px) */
+@media (max-width: 880px) {
+  .contact-container-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .milestones-timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+/* 4. Standard Mobile & Portrait Tablets (<= 768px) */
+@media (max-width: 768px) {
   .hero-wrapper {
-    padding: 5.5rem 1rem 4.5rem;
-    min-height: 75vh;
+    padding: 5rem 1rem 4rem;
+    min-height: 70vh;
+  }
+
+  .hero-pill-badge {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.95rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
   }
 
   .hero-title {
-    font-size: 2.35rem;
+    font-size: 2.45rem;
   }
 
   .hero-subtitle {
     font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .stats-container {
+    margin: -2.5rem auto 2.5rem;
+    padding: 0 1rem;
   }
 
   .stats-card-grid {
@@ -2117,11 +2169,26 @@ a:hover {
 
   .stat-item {
     border-bottom: 1px solid var(--slate-100);
+    padding: 1.5rem 1rem;
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .quick-nav-section {
+    padding: 0 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .main-content-flow {
+    padding: 0 1rem 4rem;
   }
 
   .detail-section {
-    padding: 2.25rem 1.5rem;
+    padding: 2.25rem 1.4rem;
     border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
   }
 
   .section-badge-header {
@@ -2131,15 +2198,68 @@ a:hover {
   }
 
   .section-heading-group h2 {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
   }
 
-  .lightbox-nav-btn.prev {
-    left: 5px;
+  .section-lead-subtitle {
+    font-size: 1.02rem;
   }
 
-  .lightbox-nav-btn.next {
-    right: 5px;
+  .legacy-highlight-box {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .lead-highlight-text {
+    font-size: 1.05rem;
+  }
+
+  .vision-box {
+    padding: 1.65rem 1.35rem;
+  }
+
+  .vision-text {
+    font-size: 1.12rem;
+  }
+
+  .vision-quote-icon {
+    font-size: 3.5rem;
+  }
+
+  .sub-card {
+    padding: 1.5rem;
+  }
+
+  .pillar-card {
+    padding: 1.5rem;
+  }
+
+  .support-action-box {
+    padding: 1.85rem 1.35rem;
+  }
+
+  .support-action-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .support-action-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .support-cta-footer {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .btn-gold-inline {
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  .contact-card, .bank-card {
+    padding: 1.85rem 1.35rem;
   }
 
   .footer-inner {
@@ -2150,6 +2270,35 @@ a:hover {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+    gap: 0.75rem;
+  }
+
+  /* Lightbox on mobile */
+  .lightbox-modal {
+    padding: 1rem 0.5rem;
+  }
+
+  .lightbox-close-btn {
+    top: 12px;
+    right: 12px;
+    position: fixed;
+    z-index: 10002;
+    background: rgba(0, 0, 0, 0.65);
+  }
+
+  .lightbox-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.65);
+  }
+
+  .lightbox-nav-btn.prev {
+    left: 8px;
+  }
+
+  .lightbox-nav-btn.next {
+    right: 8px;
   }
 
   #backToTopBtn {
@@ -2157,5 +2306,178 @@ a:hover {
     right: 1.25rem;
     width: 44px;
     height: 44px;
+  }
+}
+
+/* 5. Compact Smartphones (<= 480px) */
+@media (max-width: 480px) {
+  .hero-wrapper {
+    padding: 4.5rem 0.75rem 3.5rem;
+  }
+
+  .hero-pill-badge {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.75rem;
+    letter-spacing: 0.03em;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .hero-subtitle {
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-actions a {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .stat-number {
+    font-size: 2.15rem;
+  }
+
+  .quick-nav-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .quick-nav-card {
+    padding: 0.95rem 1rem;
+  }
+
+  .milestones-timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .detail-section {
+    padding: 1.75rem 1.15rem;
+    border-radius: var(--radius-md);
+  }
+
+  .section-icon-badge {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+
+  .section-heading-group h2 {
+    font-size: 1.6rem;
+  }
+
+  .gallery-filter-bar {
+    gap: 0.4rem;
+  }
+
+  .filter-btn {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.85rem;
+    flex: 1 1 calc(50% - 0.4rem);
+    text-align: center;
+  }
+
+  .image-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .image-thumbnail-wrap {
+    height: 195px;
+  }
+
+  .image-card-caption {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1.1rem;
+  }
+
+  .bank-account-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .bank-acc-num {
+    font-size: 1.08rem;
+    word-break: break-all;
+  }
+
+  .contact-action-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .contact-item-value a {
+    word-break: break-all;
+  }
+
+  .bank-field {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .toast-notification {
+    width: calc(100% - 2rem);
+    max-width: 340px;
+    font-size: 0.85rem;
+    padding: 0.65rem 1rem;
+    bottom: 1.5rem;
+  }
+}
+
+/* 6. Extra Small Screens (<= 360px - e.g. iPhone SE 1st Gen, Galaxy Fold) */
+@media (max-width: 360px) {
+  .brand-title {
+    font-size: 1.02rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.65rem;
+  }
+
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-container {
+    padding: 0.6rem 0.85rem;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .detail-section {
+    padding: 1.5rem 0.95rem;
+  }
+
+  .section-heading-group h2 {
+    font-size: 1.45rem;
+  }
+
+  .filter-btn {
+    flex: 1 1 100%;
   }
 }
